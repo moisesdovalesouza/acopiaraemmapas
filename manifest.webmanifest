@@ -1,0 +1,33 @@
+{
+  "id": "/acopiara-cartografia",
+  "name": "Acopiara — cartografia de domicílios, população e eleitorado",
+  "short_name": "Acopiara",
+  "description": "Mapas interativos de Acopiara (CE): domicílios, população, eleitorado, seções eleitorais e indicadores do Censo 2022.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "./painel/",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#132330",
+  "theme_color": "#132330",
+  "categories": ["maps", "navigation", "government", "utilities"],
+  "icons": [
+    { "src": "./icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "./icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Painel completo", "short_name": "Painel", "url": "./painel/",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Planta urbana por rua", "short_name": "Planta", "url": "./planta/",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Residências por quadrante", "short_name": "Quadrantes", "url": "./quadrantes/",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

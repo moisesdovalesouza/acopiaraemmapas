@@ -7,6 +7,9 @@ hospedagem de arquivos estáticos.
 ## Estrutura
 
     index.html          página inicial
+    manifest.webmanifest  torna o site instalável como aplicativo
+    sw.js               cache offline (service worker)
+    icons/              ícone do aplicativo em todos os tamanhos
     painel/             painel completo (domicílios, população, eleitores, eleições, Censo)
     planta/             planta urbana por rua
     quadrantes/         residências por quadrante
@@ -61,3 +64,21 @@ As camadas do OpenStreetMap e do Google Open Buildings são distribuídas sob **
 exige atribuição e compartilhamento nos mesmos termos. A atribuição já consta no rodapé de
 todas as páginas — mantenha-a. Se o repositório for público, o conteúdo derivado dessas
 bases fica sujeito às mesmas condições.
+
+
+## Aplicativo instalável
+
+O site é um PWA: servido em https, aparece a opção de instalar.
+
+- **Android / Chrome / Edge**: banner "Instalar aplicativo", ou menu ⋮ → "Instalar aplicativo".
+  Dentro do painel há também o botão "Instalar no dispositivo".
+- **iPhone / iPad**: Safari → botão Compartilhar → "Adicionar à Tela de Início".
+  O painel mostra essa instrução quando detecta iOS.
+- **Windows / macOS**: ícone de instalação na barra de endereço do Chrome ou Edge.
+
+Depois de instalado abre em tela cheia, com ícone próprio, e funciona **offline**: o service
+worker guarda as páginas visitadas. As imagens de satélite continuam exigindo internet.
+
+Importante para o GitHub Pages: em repositório de projeto o site fica em `/nome-do-repo/`.
+Os caminhos aqui são todos relativos, então funciona — mas o service worker só controla a
+pasta do projeto, o que é suficiente.
