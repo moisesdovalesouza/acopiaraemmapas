@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Acopiara / CE — cartografia de domicílios, população e eleitorado</title>
+<meta name="description" content="Mapas interativos de Acopiara (CE): domicílios, população, eleitorado, seções eleitorais e indicadores do Censo 2022.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#f5f6f7; --papel2:#ffffff; --tinta:#11181e; --tinta2:#5b6870;
+  --regua:#c8d0d4; --regua2:#e6eaec; --marca:#8c1c13; --acento:#1f5279;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --papel:#11161a; --papel2:#171e23; --tinta:#e9eef0; --tinta2:#98a5ad;
+  --regua:#2b363d; --regua2:#202930; --marca:#e2685c; --acento:#5e8fae;
+}}
+:root[data-theme="dark"]{
+  --papel:#11161a; --papel2:#171e23; --tinta:#e9eef0; --tinta2:#98a5ad;
+  --regua:#2b363d; --regua2:#202930; --marca:#e2685c; --acento:#5e8fae;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--regua);padding:54px 0 30px;margin-bottom:38px}
+.kicker{font-size:12px;letter-spacing:.16em;color:var(--tinta2);text-transform:uppercase;margin:0 0 12px}
+h1{margin:0;font-size:clamp(28px,5vw,42px);line-height:1.12;letter-spacing:-.02em;font-weight:600}
+.lead{margin:16px 0 0;font-size:clamp(15px,2.2vw,18px);color:var(--tinta2);max-width:58ch}
+.num{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.num div{border:1px solid var(--regua);border-radius:3px;padding:9px 14px;background:var(--papel2)}
+.num b{display:block;font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:600;line-height:1.2}
+.num span{font-size:11.5px;color:var(--tinta2)}
+h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta2);
+  font-weight:600;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--regua2)}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-bottom:44px}
+a.card{display:block;border:1px solid var(--regua);border-radius:4px;background:var(--papel2);
+  padding:20px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+a.card:hover{border-color:var(--acento);transform:translateY(-2px)}
+a.card:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+a.card h3{margin:0 0 7px;font-size:18px;font-weight:600;letter-spacing:-.01em}
+a.card p{margin:0;font-size:14px;color:var(--tinta2);line-height:1.55}
+a.card .tag{display:inline-block;margin-top:13px;font-size:11px;font-family:"IBM Plex Mono",monospace;
+  color:var(--acento);border:1px solid var(--regua);border-radius:2px;padding:2px 7px}
+.fontes{border:1px solid var(--regua);border-radius:4px;background:var(--papel2);padding:22px;margin-bottom:40px}
+.fontes dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:13.5px}
+.fontes dt{color:var(--tinta2)}
+.fontes dd{margin:0}
+.aviso{border-left:3px solid var(--marca);padding:2px 0 2px 16px;margin:26px 0 0;font-size:14px;color:var(--tinta2)}
+.aviso b{color:var(--tinta)}
+footer{border-top:1px solid var(--regua);padding:26px 0 60px;font-size:12.5px;color:var(--tinta2);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="kicker">Município de Acopiara — Estado do Ceará</p>
+  <h1>Cartografia de domicílios,<br>população e eleitorado</h1>
+  <p class="lead">Cada edificação do município foi vetorizada a partir de imagem de satélite e cruzada com o
+  cadastro de endereços do IBGE, com os agregados do Censo 2022 e com os dados eleitorais do TSE.</p>
+  <div class="num">
+    <div><b>22.529</b><span>domicílios</span></div>
+    <div><b>44.962</b><span>habitantes</span></div>
+    <div><b>38.356</b><span>eleitores aptos</span></div>
+    <div><b>146</b><span>seções eleitorais</span></div>
+    <div><b>15.238</b><span>edificações</span></div>
+    <div><b>1.177</b><span>logradouros</span></div>
+  </div>
+</header>
+
+<h2>Mapas interativos</h2>
+<div class="cards">
+  <a class="card" href="./painel/">
+    <h3>Painel completo</h3>
+    <p>Edificações pintadas por domicílios, população, eleitores, resultado eleitoral ou indicadores
+    do Censo. Filtros por bairro, rua e seção, tabelas ordenáveis, GPS e exportação em PDF.</p>
+    <span class="tag">comece por aqui</span>
+  </a>
+  <a class="card" href="./planta/">
+    <h3>Planta urbana por rua</h3>
+    <p>Contornos das edificações da área urbana com os domicílios do IBGE. Busque uma rua e ela acende
+    com a contagem; clique numa casa e veja rua, número e quadra.</p>
+    <span class="tag">área urbana</span>
+  </a>
+  <a class="card" href="./quadrantes/">
+    <h3>Residências por quadrante</h3>
+    <p>Malha quadriculada alinhada à quadrícula UTM, de 10 km a 100 m, com a contagem de residências
+    em cada célula e leitura de coordenadas.</p>
+    <span class="tag">município inteiro</span>
+  </a>
+</div>
+
+<h2>Pranchas em PDF</h2>
+<div class="cards">
+  <a class="card" href="./docs/Acopiara_residencias_quadrantes.pdf">
+    <h3>Residências por quadrante</h3>
+    <p>Duas pranchas A3: território municipal em quadrículas de 10 km e sede urbana em 500 m, com
+    índice completo dos quadrantes ocupados.</p>
+    <span class="tag">PDF · 2 pranchas</span>
+  </a>
+  <a class="card" href="./docs/Acopiara_area_urbana_edificacoes.pdf">
+    <h3>Atlas da área urbana</h3>
+    <p>Nove pranchas A3: planta geral, seis folhas de detalhe a 1:5.700 cobrindo 97% dos domicílios e
+    o índice dos 263 logradouros.</p>
+    <span class="tag">PDF · 9 pranchas</span>
+  </a>
+</div>
+
+<h2>Fontes</h2>
+<div class="fontes">
+  <dl>
+    <dt>Edificações</dt><dd>Google Open Buildings v3 — vetorização automática sobre imagem de satélite (CC BY 4.0 / ODbL)</dd>
+    <dt>Endereços</dt><dd>IBGE — Censo Demográfico 2022, CNEFE do município 2300309</dd>
+    <dt>População e indicadores</dt><dd>IBGE — Censo 2022, agregados por setor censitário</dd>
+    <dt>Limite municipal</dt><dd>IBGE — Malha Territorial</dd>
+    <dt>Eleitorado e votos</dt><dd>Dados abertos do TSE, pleitos de 2022 e 2024</dd>
+    <dt>Arruamento</dt><dd>OpenStreetMap (ODbL)</dd>
+    <dt>Referencial</dt><dd>SIRGAS 2000 · UTM fuso 24 S (EPSG:31984)</dd>
+  </dl>
+  <p class="aviso"><b>Sobre as estimativas.</b> Votos e eleitores aptos por seção são dados reais do TSE.
+  A população por edificação vem do rateio do setor censitário entre seus domicílios, e os eleitores e o
+  resultado eleitoral por edificação vêm do local de votação mais próximo. As coordenadas dos locais de
+  votação foram obtidas por cruzamento de nome e endereço com o cadastro do IBGE e podem conter erro —
+  o painel permite corrigi-las manualmente.</p>
+</div>
+
+<footer>
+  Elaborado por Moisés do Vale Souza — OAB/CE nº 30.800.<br>
+  Dados de origem pública. A reutilização das camadas do OpenStreetMap e do Google Open Buildings
+  está sujeita à licença ODbL, que exige atribuição e compartilhamento nos mesmos termos.
+</footer>
+</div>
+</body>
+</html>
