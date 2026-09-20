@@ -69,7 +69,7 @@ dt{color:var(--tinta2)}dd{margin:0;text-align:right;font-family:"IBM Plex Mono",
 #palco{position:relative;overflow:hidden;background:var(--papel)}
 #mapa{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair;touch-action:none;display:block}
 .flut{position:absolute;background:var(--papel2);border:1px solid var(--regua);border-radius:3px;box-shadow:0 1px 6px var(--sombra)}
-#hud{left:16px;bottom:16px;padding:8px 12px;font-size:11.3px;display:flex;align-items:center;gap:12px;font-family:"IBM Plex Mono",monospace}
+#hud{display:none}
 #barra{height:7px;border:1px solid var(--tinta);border-top:0;min-width:56px}
 #zoom{left:16px;top:16px;display:flex;flex-direction:column;overflow:hidden}
 #zoom button{border:0;background:var(--papel2);color:var(--tinta);width:32px;height:32px;font-size:17px;cursor:pointer;font-family:"IBM Plex Mono",monospace}
@@ -145,7 +145,13 @@ button.aj{border:1px solid var(--regua);background:transparent;color:var(--tinta
  display:inline-grid;place-items:center;margin-left:6px;vertical-align:middle}
 button.aj:hover{border-color:var(--grade);color:var(--tinta)}
 .bl h2{display:flex;align-items:center}
-#ajuda,#expDlg,#stDlg,#stImg{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);padding:22px}
+#ajuda,#expDlg,#stDlg,#stImg,#shDlg{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);padding:22px}
+#shDlg[data-on="1"]{display:grid;place-items:center}
+#shCx{background:var(--papel2);border:1px solid var(--regua);border-radius:8px;max-width:380px;width:100%;
+ padding:22px 24px calc(22px + env(safe-area-inset-bottom,0px))}
+#shCx h3{margin:0 0 6px;font-size:17px;font-weight:600}
+#shCx .c{font-size:12.6px;line-height:1.6;color:var(--tinta2)}
+#shCx .bt{justify-content:flex-start;text-align:left}
 #stDlg[data-on="1"],#stImg[data-on="1"]{display:grid;place-items:center}
 #stCx{background:var(--papel2);border:1px solid var(--regua);border-radius:8px;max-width:440px;width:100%;
  max-height:86vh;overflow-y:auto;padding:22px 24px calc(22px + env(safe-area-inset-bottom,0px))}
@@ -183,13 +189,19 @@ button.aj:hover{border-color:var(--grade);color:var(--tinta)}
  width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--regua);
  background:var(--papel2);border-radius:3px;cursor:pointer;color:var(--tinta)}
 #barraBaixo{position:absolute;left:50%;transform:translateX(-50%);
- bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:26;display:flex;gap:1px;
- background:var(--papel2);border:1px solid var(--regua);border-radius:22px;overflow:hidden;
- box-shadow:0 2px 12px var(--sombra)}
-#barraBaixo button{border:0;background:transparent;color:var(--tinta);font:inherit;font-size:12.4px;
- padding:10px 16px;cursor:pointer;display:flex;align-items:center;gap:7px;min-height:40px}
-#barraBaixo button+button{border-left:1px solid var(--regua2)}
+ bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:26;display:grid;
+ grid-auto-flow:column;align-items:stretch;
+ background:var(--papel2);border:1px solid var(--regua);border-radius:10px;overflow:hidden;
+ box-shadow:0 2px 12px var(--sombra);max-width:calc(100vw - 28px)}
+#barraBaixo>*{display:flex;align-items:center;gap:8px;padding:0 14px;min-height:42px}
+#barraBaixo>*+*{border-left:1px solid var(--regua2)}
+#barraBaixo button{border:0;background:transparent;color:var(--tinta);font:inherit;font-size:12.4px;cursor:pointer;white-space:nowrap}
 #barraBaixo button:hover{background:var(--regua2)}
+#bbEsc{font-family:"IBM Plex Mono",monospace;font-size:11.2px;color:var(--tinta2);white-space:nowrap}
+#bbEsc #barra{height:6px;border:1px solid var(--tinta2);border-top:0;min-width:50px}
+#bbCount{font-family:"IBM Plex Mono",monospace;font-size:11.2px;color:var(--tinta2);white-space:nowrap}
+@media(max-width:1024px){#bbCount{display:none}#barraBaixo>*{padding:0 11px}}
+@media(max-width:620px){#bbEsc{display:none}}
 #gps{z-index:36!important}
 #btnLeg{display:none;position:absolute;right:calc(14px + env(safe-area-inset-right,0px));
  top:calc(14px + env(safe-area-inset-top,0px));z-index:22;width:50px;height:50px;
@@ -429,18 +441,7 @@ if('serviceWorker' in navigator)addEventListener('load',()=>{navigator.serviceWo
   <div class="grade">
    <button class="bt" id="btnGps">Minha localização</button>
    <button class="bt" id="btnTudo">Município inteiro</button>
-   <button class="bt larg" id="btnStory">Imagem para redes sociais</button>
-   <button class="bt larg pri" id="btnTab">Abrir tabelas e fontes</button>
-  </div></div>
-
- <div class="bl"><h2>Exportar</h2>
-  <select id="escopo">
-   <option value="tudo">Relatório completo do município</option>
-   <option value="filtro">Somente o que está filtrado</option>
-   <option value="mapa">Só o mapa como está na tela</option>
-  </select>
-  <div class="grade" style="margin-top:7px">
-   <button class="bt larg pri" id="btnPdf">Exportar em PDF</button>
+   <button class="bt larg pri" id="btnCompart">Compartilhar e exportar</button>
   </div></div>
 
  <div class="bl"><h2>Posição das urnas</h2>
@@ -475,16 +476,18 @@ if('serviceWorker' in navigator)addEventListener('load',()=>{navigator.serviceWo
  <button id="tema" title="Alternar claro e escuro" aria-label="Alternar claro e escuro">
   <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M8 1a7 7 0 000 14" fill="currentColor" opacity=".9"/><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
  <div id="barraBaixo">
+  <div id="bbEsc"><div id="barra"></div><span id="barraT">—</span></div>
+  <div id="bbCount"><span id="conta">—</span></div>
   <button id="bbTab" title="Tabelas e fontes">
    <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M1.5 6.5h13M6 6.5v7" stroke="currentColor" stroke-width="1.4"/></svg>
-   <span>Tabelas e fontes</span></button>
-  <button id="bbShare" title="Compartilhar o aplicativo">
+   <span>Tabelas</span></button>
+  <button id="bbShare" title="Compartilhar">
    <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="12" cy="3.5" r="2.1" fill="currentColor"/><circle cx="4" cy="8" r="2.1" fill="currentColor"/><circle cx="12" cy="12.5" r="2.1" fill="currentColor"/><path d="M6 7L10 4.5M6 9l4 2.5" stroke="currentColor" stroke-width="1.3"/></svg>
    <span>Compartilhar</span></button>
  </div>
  <button id="btnLeg" aria-label="Mostrar ou ocultar a legenda">
   <svg width="19" height="19" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="3" width="6" height="4" rx="1" fill="currentColor"/><rect x="2" y="12" width="6" height="4" rx="1" fill="currentColor" opacity=".55"/><path d="M11 5h7M11 14h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
- <div class="flut" id="hud"><div id="barra"></div><span id="barraT">—</span><span id="conta">—</span></div>
+
  <div id="gav"><div id="abas">
    <button data-t="bairros" aria-pressed="true">Bairros</button>
    <button data-t="ruas" aria-pressed="false">Ruas</button>
@@ -504,13 +507,25 @@ if('serviceWorker' in navigator)addEventListener('load',()=>{navigator.serviceWo
  <div id="popAbas"></div>
  <div id="popCorpo"></div>
 </div>
+<div id="shDlg" data-on="0"><div id="shCx">
+ <h3>Compartilhar e exportar</h3>
+ <div class="c" style="margin-bottom:12px">Escolha o que quer levar daqui.</div>
+ <div class="grade">
+  <button class="bt larg" id="shApp"><b>Link do aplicativo</b></button>
+  <button class="bt larg" id="shImg"><b>Imagem para redes sociais</b></button>
+  <button class="bt larg" id="shPdf"><b>Relatório em PDF</b></button>
+  <button class="bt larg" id="shTab">Tabelas e fontes</button>
+  <button class="bt larg" id="shFecha">Cancelar</button>
+ </div></div></div>
 <div id="stDlg" data-on="0"><div id="stCx">
  <h3>Imagem para redes sociais</h3>
  <div class="c" style="margin-bottom:10px">Formato 9×16, para stories. Escolha até três informações.</div>
  <label class="ex"><span>Título</span></label>
  <input type="text" id="stTit" style="margin-bottom:10px">
  <div id="stLista"></div>
- <label class="ex" style="margin-top:8px"><input type="checkbox" id="stClaro"><span>Fundo claro</span></label>
+ <label class="ex" style="margin-top:6px;color:var(--tinta2);font-size:11.5px"><span>Camadas da imagem</span></label>
+ <div id="stCamadas"></div>
+ <label class="ex" style="margin-top:6px"><input type="checkbox" id="stClaro"><span>Fundo claro</span></label>
  <div class="grade" style="margin-top:12px">
   <button class="bt" id="stCancela">Cancelar</button>
   <button class="bt pri" id="stOk">Gerar imagem</button>
@@ -522,6 +537,7 @@ if('serviceWorker' in navigator)addEventListener('load',()=>{navigator.serviceWo
   <button class="bt" id="stBaixa">Baixar</button>
   <button class="bt larg pri" id="stShare">Compartilhar</button>
  </div></div></div>
+<div style="display:none"><button id="btnPdf"></button><button id="btnStory"></button><button id="btnTab"></button></div>
 <div id="expDlg" data-on="0"><div id="expCx">
  <h3>Exportar em PDF</h3>
  <div class="c" style="margin-bottom:12px">Marque o que deve entrar no documento. O mapa sai em fundo branco, com cabeçalho, rodapé, identificador e QR de procedência.</div>
@@ -764,14 +780,15 @@ const lon2tx=(lo,z)=>(lo+180)/360*Math.pow(2,z);
 const lat2ty=(la,z)=>{const r=la*Math.PI/180;return (1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*Math.pow(2,z);};
 const tx2lon=(x,z)=>x/Math.pow(2,z)*360-180;
 const ty2lat=(y,z)=>{const n=Math.PI-2*Math.PI*y/Math.pow(2,z);return 180/Math.PI*Math.atan(.5*(Math.exp(n)-Math.exp(-n)));};
-function tile(z,x,y){
+function tile(z,x,y,silencioso){
  const k=base+'/'+z+'/'+x+'/'+y;
  let t=TILES.get(k);
- if(t) return t.ok?t.img:null;
+ if(t) return t.ok?t.img:(t.falhou?'x':null);
+ if(silencioso) return null;
  const img=new Image();
  const rec={img,ok:false}; TILES.set(k,rec); pedidos++;
  img.onload=()=>{rec.ok=true;desenha();};
- img.onerror=()=>{falhas++;if(falhas>=4&&falhas>=pedidos*0.6)avisaBase();};
+ img.onerror=()=>{rec.falhou=true;falhas++;if(falhas>=4&&falhas>=pedidos*0.6)avisaBase();desenha();};
  img.src=BASES[base].u(z,x,y);
  return null;}
 function avisaBase(){const el=$('avisoBase');
@@ -791,10 +808,19 @@ function desenhaBase(c,w,h,k){
  if((x1-x0+1)*(y1-y0+1)>420)return;
  c.imageSmoothingEnabled=true;
  for(let tx=x0;tx<=x1;tx++)for(let ty=y0;ty<=y1;ty++){
-  const img=tile(z,tx,ty); if(!img)continue;
+  let img=tile(z,tx,ty), zz=z, xx=tx, yy=ty, nivel=0;
+  /* sem correspondência nesta escala: amplia o ladrilho do nível acima */
+  while((!img||img==='x')&&nivel<4&&zz>4){
+   zz--; xx=Math.floor(xx/2); yy=Math.floor(yy/2); nivel++;
+   img=tile(zz,xx,yy,nivel>1);}
+  if(!img||img==='x')continue;
   const nw=ll2utm(ty2lat(ty,z),tx2lon(tx,z)),se=ll2utm(ty2lat(ty+1,z),tx2lon(tx+1,z));
   const X=sx(nw[0]-OX),Y=sy(nw[1]-OY),X2=sx(se[0]-OX),Y2=sy(se[1]-OY);
-  c.drawImage(img,X,Y,Math.max(1,X2-X)+.6,Math.max(1,Y2-Y)+.6);}
+  if(nivel===0){c.drawImage(img,X,Y,Math.max(1,X2-X)+.6,Math.max(1,Y2-Y)+.6);}
+  else{
+   const f=1<<nivel, lado=img.width/f;
+   const ox=(tx-xx*f)*lado, oy=(ty-yy*f)*lado;
+   c.drawImage(img,ox,oy,lado,lado,X,Y,Math.max(1,X2-X)+.6,Math.max(1,Y2-Y)+.6);}}
  c.save();c.globalAlpha=base==='sat'?.10:.05;c.fillStyle=css('--papel');c.fillRect(0,0,w,h);c.restore();
  c.font=(9.5*k)+'px "IBM Plex Sans",sans-serif';const t=B.a;
  const ww=c.measureText(t).width;
@@ -999,6 +1025,27 @@ function pinta(c,w,h,k){
     const t=l.s.join(', ').slice(0,30),ww=c.measureText(t).width;
     c.fillStyle=css('--papel2');c.globalAlpha=.86;c.fillRect(X-ww/2-3,Y+r+2*k,ww+6,13*k);c.globalAlpha=1;
     c.fillStyle=css('--tinta');c.fillText(t,X,Y+r+3*k);c.textAlign='left';c.textBaseline='alphabetic';}});}
+ if(divi==='ed'&&cNom.checked&&esc<=.09&&D.divLoc){
+  const ag=D.divLoc.ag,pol=D.divLoc.pol,post=[];
+  const dmin=Math.max(900,2200/Math.max(esc,.004));
+  const lim=esc<=.02?(esc<=.008?8:22):60;
+  c.textAlign='center';c.textBaseline='middle';
+  const ordem=ag.map((a,u)=>[a,u]).sort((a,b)=>b[0].dom-a[0].dom);
+  for(const [a,u] of ordem){
+   if(post.length>=lim)break;
+   if(a.dom<(esc<=.008?400:(esc<=.02?60:8)))continue;
+   const f=pol[u][0];let mx_=0,my_=0;
+   for(let i=0;i<f.length;i+=2){mx_+=f[i];my_+=f[i+1];}
+   mx_/=f.length/2;my_/=f.length/2;
+   const X=sx(mx_),Y=sy(my_);if(X<-60||X>w+60||Y<-40||Y>h+40)continue;
+   if(post.some(q=>(q[0]-mx_)**2+(q[1]-my_)**2<dmin*dmin))continue;
+   post.push([mx_,my_]);
+   const fs=(a.dom>1500?13:(a.dom>400?11.5:10))*k;
+   c.font='600 '+fs+'px "IBM Plex Sans",sans-serif';
+   const t=a.n.slice(0,24),ww=c.measureText(t).width;
+   c.fillStyle=css('--papel');c.globalAlpha=.78;c.fillRect(X-ww/2-5,Y-9*k,ww+10,17*k);c.globalAlpha=1;
+   c.fillStyle=css('--tinta');c.fillText(t,X,Y);}
+  c.textAlign='left';c.textBaseline='alphabetic';}
  if(cNom.checked&&esc>.07){
   const post=[],dmin=Math.max(70,130/esc);
   c.textAlign='center';c.textBaseline='middle';
@@ -1174,15 +1221,18 @@ function popRua(i){
  desenha();}
 function rotas(x,y,nome){
  const ll=utm2ll(x+OX,y+OY),la=ll[0].toFixed(6),lo=ll[1].toFixed(6);
- const n=encodeURIComponent(nome||'Destino');
- return `<div style="margin-top:11px;font-size:11.4px;color:var(--tinta2)">Abrir rota até aqui</div>
-  <div class="grade" style="margin-top:5px">
-   <a class="bt" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${la},${lo}">Google Maps</a>
-   <a class="bt" target="_blank" rel="noopener" href="https://waze.com/ul?ll=${la},${lo}&navigate=yes">Waze</a>
-   <a class="bt" target="_blank" rel="noopener" href="https://maps.apple.com/?daddr=${la},${lo}">Apple Mapas</a>
-   <a class="bt" href="geo:${la},${lo}?q=${la},${lo}(${n})">Outro aplicativo</a>
-   <button class="bt larg" onclick="navigator.clipboard&&navigator.clipboard.writeText('${la}, ${lo}');this.textContent='Coordenada copiada'">Copiar coordenada</button>
-  </div>`;}
+ return `<div class="grade" style="margin-top:12px">
+   <button class="bt larg pri" onclick="abrirRota(${la},${lo},this)">Como chegar</button></div>`;}
+function abrirRota(la,lo,bt){
+ const ua=navigator.userAgent||'';
+ const android=/Android/i.test(ua), ios=/iPad|iPhone|iPod/.test(ua)&&!window.MSStream;
+ let url;
+ if(android) url='geo:'+la+','+lo+'?q='+la+','+lo;        /* o Android abre o seletor de aplicativos */
+ else if(ios) url='maps://?daddr='+la+','+lo;             /* o iOS oferece os mapas instalados */
+ else url='https://www.google.com/maps/dir/?api=1&destination='+la+','+lo;
+ const j=window.open(url,'_blank');
+ if(!j&&bt){navigator.clipboard&&navigator.clipboard.writeText(la+', '+lo);
+  bt.textContent='Coordenada copiada';}}
 function popUnid(u){
  const d=DIV(),a=d.ag[u],P=$('pop');
  selU=u;selB=-1;selL=-1;selR=-1;selP=-1;
@@ -1542,6 +1592,10 @@ $('btnStory').onclick=()=>{
  $('stLista').querySelectorAll('input').forEach(i=>i.onchange=()=>{
   const m=[...$('stLista').querySelectorAll('input:checked')];
   if(m.length>3)i.checked=false;});
+ const CAM=[['cEdi','Edificações'],['cUrn','Urnas'],['cNum','Nº das seções'],['cVia','Vias'],
+  ['cNom','Nomes das ruas'],['cPoi','Referências'],['cPto','Lotes inferidos'],['cLim','Limite municipal']];
+ $('stCamadas').innerHTML=CAM.map(([k,t])=>
+  `<label class="ex"><input type="checkbox" data-cam="${k}" ${window[k].checked?'checked':''}><span>${t}</span></label>`).join('');
  $('stDlg').dataset.on='1';};
 $('stCancela').onclick=()=>$('stDlg').dataset.on='0';
 $('stDlg').onclick=e=>{if(e.target.id==='stDlg')$('stDlg').dataset.on='0';};
@@ -1555,6 +1609,9 @@ function gerarStory(){
  const esco=[...$('stLista').querySelectorAll('input:checked')].map(i=>d.L[+i.dataset.st]).slice(0,3);
  const titulo=$('stTit').value.trim()||d.tit;
  const claro=$('stClaro').checked;
+ const antes={};
+ $('stCamadas').querySelectorAll('input[data-cam]').forEach(i=>{
+  const k=i.dataset.cam;antes[k]=window[k].checked;window[k].checked=i.checked;});
  const LW=1080,LH=1920;
  const raiz=document.documentElement,temaAnt=raiz.dataset.theme||'';
  raiz.dataset.theme=claro?'light':'dark';void raiz.offsetWidth;
@@ -1603,7 +1660,9 @@ function gerarStory(){
  c.fillText('Gerado pelo aplicativo de cartografia de Acopiara',152,LH-104);
  c.font='500 24px "IBM Plex Mono",monospace';
  c.fillText(end.slice(0,46),152,LH-66);
- raiz.dataset.theme=temaAnt;if(!temaAnt)delete raiz.dataset.theme;desenha();
+ raiz.dataset.theme=temaAnt;if(!temaAnt)delete raiz.dataset.theme;
+ for(const k in antes)window[k].checked=antes[k];
+ desenha();
  const ic=new Image();
  ic.onload=()=>{c.drawImage(ic,62,LH-142,74,74);fim();};
  ic.onerror=fim;ic.src=ICONE;
@@ -1812,7 +1871,16 @@ $('abrir').onclick=()=>abreRail(true);
 $('fecha').onclick=()=>abreRail(false);
 $('veu').onclick=()=>abreRail(false);
 $('bbTab').onclick=()=>$('btnTab').click();
-$('bbShare').onclick=async()=>{
+function abreCompart(){$('shDlg').dataset.on='1';}
+$('bbShare').onclick=abreCompart;
+$('btnCompart').onclick=()=>{abreCompart();if(movel())abreRail(false);};
+$('shFecha').onclick=()=>$('shDlg').dataset.on='0';
+$('shDlg').onclick=e=>{if(e.target.id==='shDlg')$('shDlg').dataset.on='0';};
+$('shTab').onclick=()=>{$('shDlg').dataset.on='0';$('btnTab').click();};
+$('shPdf').onclick=()=>{$('shDlg').dataset.on='0';setTimeout(()=>$('btnPdf').click(),60);};
+$('shImg').onclick=()=>{$('shDlg').dataset.on='0';setTimeout(()=>$('btnStory').click(),60);};
+$('shApp').onclick=async()=>{$('shDlg').dataset.on='0';await compartilhaApp();};
+async function compartilhaApp(){
  const dados={title:'Acopiara — cartografia de domicílios, população e eleitorado',
   text:'Mapa interativo de Acopiara (CE): 22.529 domicílios, 44.962 habitantes, 38.356 eleitores e 146 seções, sobre edificações vetorizadas de imagem de satélite.',
   url:location.href.split('#')[0]};
@@ -1823,7 +1891,7 @@ $('bbShare').onclick=async()=>{
   $('ajC').innerHTML='<p>O texto abaixo foi copiado e pode ser colado em qualquer aplicativo de mensagem.</p>'
    +'<p style="background:var(--papel);border:1px solid var(--regua);border-radius:4px;padding:10px;font-size:12.5px">'
    +txt.replace(/\n/g,'<br>')+'</p>';
-  $('ajuda').dataset.on='1';}catch(e){prompt('Copie o link:',dados.url);} };
+  $('ajuda').dataset.on='1';}catch(e){prompt('Copie o link:',dados.url);} }
 $('btnLeg').onclick=()=>{const l=$('leg');l.dataset.on=l.dataset.on==='1'?'0':'1';};
 // fecha a folha inferior arrastando para baixo
 (function(){let y0=null;const p=$('pop');
@@ -1978,7 +2046,7 @@ function idDoc(){
  return `ACP-${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}-${b36}`;
 }
 $('btnPdf').onclick=()=>{
- $('escopo2').value=$('escopo').value==='mapa'?'tudo':$('escopo').value;
+ 
  $('expLista').innerHTML=SECOES.map(([k,t])=>
   `<label class="ex"><input type="checkbox" data-sec="${k}" checked><span>${t}</span></label>`).join('');
  $('expDlg').dataset.on='1';};
