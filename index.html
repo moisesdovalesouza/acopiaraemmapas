@@ -71,8 +71,17 @@ footer{border-top:1px solid var(--regua);padding:26px 0 60px;font-size:12.5px;co
 <meta name="msapplication-TileColor" content="#132330">
 <meta name="msapplication-config" content="./browserconfig.xml">
 <script>
-if('serviceWorker' in navigator)addEventListener('load',()=>{
- navigator.serviceWorker.register('./sw.js').catch(()=>{});});
+if('serviceWorker' in navigator){
+ let recarregou=false;
+ navigator.serviceWorker.addEventListener('controllerchange',()=>{if(recarregou)return;recarregou=true;location.reload();});
+ navigator.serviceWorker.addEventListener('message',e=>{
+  if(e.data&&e.data.tipo==='offline-pronto'){const el=document.getElementById('offTag');if(el)el.textContent=' · disponível offline';}});
+ addEventListener('load',()=>{
+  navigator.serviceWorker.register('./sw.js').then(r=>{r.update();
+   navigator.serviceWorker.ready.then(reg=>{
+    const vai=()=>reg.active&&reg.active.postMessage({tipo:'guardar',base:reg.scope});
+    ('requestIdleCallback' in window)?requestIdleCallback(vai,{timeout:8000}):setTimeout(vai,5000);});
+  }).catch(()=>{});});}
 </script>
 </head>
 <body>
