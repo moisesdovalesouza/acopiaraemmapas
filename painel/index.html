@@ -476,6 +476,10 @@ body[data-el="1"]{overflow:hidden}
 #el tr.cl{cursor:pointer}#el tr.cl:hover td{background:var(--regua2)}
 #el tr.cl:focus-visible{outline:2px solid var(--sel);outline-offset:-2px}
 @media (max-width:640px){#elCand{padding:0;align-items:stretch}#elCand .cbox{border-radius:0;border:0}}
+
+#elCand .secs{display:flex;flex-wrap:wrap;gap:2px 10px;margin-top:3px;white-space:normal}
+#elCand .secs span{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--tinta2)}
+#elCand .secs b{font-weight:600;color:var(--tinta)}
 </style><link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJDYXJ0b2dyYWZpYSBkZSBBY29waWFyYSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJmdW5kbyIgeDE9IjAiIHkxPSIwIiB4Mj0iMC4zNSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzFiMmMzYSIvPjxzdG9wIG9mZnNldD0iMC41NSIgc3RvcC1jb2xvcj0iIzEzMjMzMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBiMTUxZCIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJwaW5vIiB4MT0iMC4yIiB5MT0iMCIgeDI9IjAuOCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzRmZDhhZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE3OTE2ZiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ic29tYnJhIiB4PSItMzAlIiB5PSItMzAlIiB3aWR0aD0iMTYwJSIgaGVpZ2h0PSIxNjAlIj48ZmVEcm9wU2hhZG93IGR4PSIwIiBkeT0iMTAiIHN0ZERldmlhdGlvbj0iMTQiIGZsb29kLWNvbG9yPSIjMDAwIiBmbG9vZC1vcGFjaXR5PSIwLjQ1Ii8+PC9maWx0ZXI+PGNsaXBQYXRoIGlkPSJjb3J0ZSI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTQiIHJ5PSIxMTQiLz48L2NsaXBQYXRoPjwvZGVmcz48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExNCIgcnk9IjExNCIgZmlsbD0idXJsKCNmdW5kbykiLz48ZyBjbGlwLXBhdGg9InVybCgjY29ydGUpIj48IS0tIHF1YWRyw61jdWxhIFVUTSAtLT48ZyBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjA3IiBzdHJva2Utd2lkdGg9IjciPjxwYXRoIGQ9Ik0xNzAgMFY1MTJNMzQyIDBWNTEyTTAgMTcwSDUxMk0wIDM0Mkg1MTIiLz48L2c+PGcgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4wMzUiIHN0cm9rZS13aWR0aD0iNCI+PHBhdGggZD0iTTg1IDBWNTEyTTI1NiAwVjUxMk00MjcgMFY1MTJNMCA4NUg1MTJNMCAyNTZINTEyTTAgNDI3SDUxMiIvPjwvZz48IS0tIGVpeG8gdmnDoXJpbyAtLT48cGF0aCBkPSJNLTIwIDM5MiBMMjAwIDMzMCBMMzMwIDM1OCBMNTQwIDI5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGZhNmI1IiBzdHJva2Utb3BhY2l0eT0iMC4zMCIgICAgICAgICAgc3Ryb2tlLXdpZHRoPSIxNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PCEtLSBlZGlmaWNhw6fDtWVzIC0tPjxnPjxyZWN0IHg9IjYyIiAgeT0iMzU2IiB3aWR0aD0iNzQiIGhlaWdodD0iNjAiIHJ4PSI3IiBmaWxsPSIjM2Y2Zjk1IiBmaWxsLW9wYWNpdHk9IjAuOTUiLz48cmVjdCB4PSIxNTAiIHk9IjM3MiIgd2lkdGg9IjU4IiBoZWlnaHQ9IjQ4IiByeD0iNyIgZmlsbD0iIzdhYTJjMCIgZmlsbC1vcGFjaXR5PSIwLjkyIi8+PHJlY3QgeD0iMjIyIiB5PSIzOTIiIHdpZHRoPSI2NiIgaGVpZ2h0PSI1MiIgcng9IjciIGZpbGw9IiNjNGQ5ZTgiIGZpbGwtb3BhY2l0eT0iMC45MCIvPjxyZWN0IHg9IjMwMiIgeT0iMzc2IiB3aWR0aD0iNTIiIGhlaWdodD0iNDYiIHJ4PSI3IiBmaWxsPSIjNWI4OWFkIiBmaWxsLW9wYWNpdHk9IjAuOTIiLz48cmVjdCB4PSIzNjgiIHk9IjM0NCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjYyIiByeD0iNyIgZmlsbD0iIzlkYmRkNCIgZmlsbC1vcGFjaXR5PSIwLjg4Ii8+PHJlY3QgeD0iOTYiICB5PSIyOTIiIHdpZHRoPSI1MiIgaGVpZ2h0PSI0MiIgcng9IjciIGZpbGw9IiMyZjVhN2MiIGZpbGwtb3BhY2l0eT0iMC43NSIvPjxyZWN0IHg9IjM4NiIgeT0iMjcyIiB3aWR0aD0iNTYiIGhlaWdodD0iNDQiIHJ4PSI3IiBmaWxsPSIjMmY1YTdjIiBmaWxsLW9wYWNpdHk9IjAuNzAiLz48L2c+PCEtLSBwaW5vIC0tPjxnIGZpbHRlcj0idXJsKCNzb21icmEpIj48cGF0aCBkPSJNMjU2IDQyNCAgICAgICAgICAgICAgIEMyNTYgNDI0IDE1MCAzMDAgMTUwIDIxOCAgICAgICAgICAgICAgIGExMDYgMTA2IDAgMSAxIDIxMiAwICAgICAgICAgICAgICAgYzAgODIgLTEwNiAyMDYgLTEwNiAyMDZaIiAgICAgICAgICAgIGZpbGw9InVybCgjcGlubykiLz48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyMTIiIHI9IjQzIiBmaWxsPSIjMGIxNTFkIiBmaWxsLW9wYWNpdHk9IjAuOTIiLz48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyMTIiIHI9IjE3IiBmaWxsPSIjZWFmYWY0Ii8+PC9nPjwvZz48L3N2Zz4=">
 <link rel="icon" href="../icons/favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
@@ -573,6 +577,7 @@ if('serviceWorker' in navigator){
    <input type="text" id="frua" placeholder="rua: digite parte do nome" aria-label="Filtrar por rua">
    <select id="lrua" size="4" style="display:none"></select>
    <input type="text" id="fsec" placeholder="seção: número ou nome do local" aria-label="Seção">
+   <div id="lfloc" style="display:none;align-items:center;gap:8px;justify-content:space-between;font-size:12px;padding:7px 9px;border:1px solid var(--regua);border-left:3px solid var(--sel);border-radius:4px;background:var(--papel)"></div>
    <button class="bt" id="btnLimpar">Limpar filtros</button></div></div>
 
  <div class="bl"><h2>Em foco</h2>
@@ -615,7 +620,7 @@ if('serviceWorker' in navigator){
   <div class="grade"><button class="bt larg" id="btnInstalar">Instalar no dispositivo</button></div>
   <div class="dica">Ganha ícone próprio, abre em tela cheia e funciona offline depois da primeira visita.</div></div>
 
- <div style="padding:10px 20px 0;font-size:10.5px;color:var(--tinta2);font-family:'IBM Plex Mono',monospace">Versão de 06/10/2026 18:40<span id="offTag"></span></div>
+ <div style="padding:10px 20px 0;font-size:10.5px;color:var(--tinta2);font-family:'IBM Plex Mono',monospace">Versão de 06/10/2026 19:01<span id="offTag"></span></div>
  <div class="rod">Edificações: Google Open Buildings v3 (vetorização automática sobre imagem de satélite).
   Domicílios, logradouros, bairros e setores: IBGE — Censo 2022, CNEFE 2300309. População residente: IBGE — Censo 2022,
   agregados por setor. Seções, locais, eleitores aptos e votos: dados abertos e resultados do TSE (2022, 2024 e 2026).
@@ -1051,7 +1056,9 @@ function valor(k){
  if(modo==='comp'){const L=D.loc[l];return L&&L.d?L.a/L.d:0;}
  if(modo==='cand'){const t=TOTL[l];return t?(VL[l][cand]||0)/t:0;}
  return 0;}
-const VISIVEL=k=>(fdist<0||D.bairros[D.bb[k]].dt===fdist)&&(fbai<0||D.bb[k]===fbai)&&(frua<0||D.br[k]===frua);
+let FLOC=null;
+const SOVENC=()=>modo==='venc'&&!!cand;
+const VISIVEL=k=>(!FLOC||FLOC.has(D.bl[k]))&&(fdist<0||D.bairros[D.bb[k]].dt===fdist)&&(fbai<0||D.bb[k]===fbai)&&(frua<0||D.br[k]===frua);
 let BRK=[],MAXV=0,HIST=[],NSEM=0,NFORA=0;
 function nice(v){if(v<=0)return 1;const p=Math.pow(10,Math.floor(Math.log10(v)));
  return ([1,2,2.5,5,10].find(z=>z*p>=v)||10)*p;}
@@ -1118,7 +1125,7 @@ function pinta(c,w,h,k){
   for(let u=0;u<d.pol.length;u++){
    const vis=unidVis(u);
    const v=modo==='venc'?null:valorUnid(u);
-   const cor_=!vis?css('--nada'):(modo==='venc'?corVenc(vencUnid(u)):((v==null||v<=0)?css('--nada'):css(FN[classe(v)])));
+   const cor_=!vis?css('--nada'):(modo==='venc'?(SOVENC()&&vencUnid(u)!==cand?css('--nada'):corVenc(vencUnid(u))):((v==null||v<=0)?css('--nada'):css(FN[classe(v)])));
    c.fillStyle=cor_;c.globalAlpha=!vis?.14:(u===selU?.78:.5);c.beginPath();
    for(const f of d.pol[u]){c.moveTo(sx(f[0]),sy(f[1]));
     for(let i=2;i<f.length;i+=2)c.lineTo(sx(f[i]),sy(f[i+1]));c.closePath();}
@@ -1163,7 +1170,7 @@ function pinta(c,w,h,k){
    if(!VISIVEL(kk)){grupos.has('_o')||grupos.set('_o',[]);grupos.get('_o').push(kk);continue;}
    if(D.inf&&D.inf[kk]&&!cPto.checked)continue;
    let key;
-   if(modo==='venc'){const n=VENC[D.bl[kk]];key=n?('v'+n):'_n';}
+   if(modo==='venc'){const n=VENC[D.bl[kk]];key=(n&&(!SOVENC()||n===cand))?('v'+n):'_n';}
    else{const v=valor(kk);key=(v!=null&&v>0)?('c'+classe(v)):'_n';}
    grupos.has(key)||grupos.set(key,[]);grupos.get(key).push(kk);}
   for(const [key,ids] of grupos){
@@ -1245,7 +1252,7 @@ function pinta(c,w,h,k){
     c.fillStyle=css('--papel2');c.globalAlpha=.85;c.fillRect(X-ww/2-3,Y+r2+2*k,ww+6,13*k);c.globalAlpha=1;
     c.fillStyle=cor;c.fillText(t,X,Y+r2+3*k);c.textAlign='left';c.textBaseline='alphabetic';}}}
  if(cUrn.checked){const mA=Math.max(...D.loc.map(l=>l.a));
-  D.loc.forEach((l,i)=>{const X=sx(l.x),Y=sy(l.y);if(X<-50||X>w+50||Y<-50||Y>h+50)return;
+  D.loc.forEach((l,i)=>{if(FLOC&&!FLOC.has(i))return;if(SOVENC()&&VENC[i]!==cand)return;const X=sx(l.x),Y=sy(l.y);if(X<-50||X>w+50||Y<-50||Y>h+50)return;
    const r=(5+11*Math.sqrt(l.a/mA))*k;
    c.save();c.shadowColor='rgba(0,0,0,.35)';c.shadowBlur=4*k;c.shadowOffsetY=1*k;
    c.beginPath();c.arc(X,Y,r,0,6.284);
@@ -1337,9 +1344,10 @@ function legenda(){
   ${(modo==='venc'||modo==='cand'||MAJOR(pleito))?'<br>'+pleito:''}</div>`;
  if(modo==='venc'||MAJOR(pleito)){
   const c=new Map();VENC.forEach((n,i)=>{if(n)c.set(n,(c.get(n)||0)+TOTL[i]);});
-  [...c.entries()].sort((a,b)=>b[1]-a[1]).slice(0,10).forEach(([n,v])=>{
+  [...c.entries()].filter(([n])=>!SOVENC()||n===cand).sort((a,b)=>b[1]-a[1]).slice(0,10).forEach(([n,v])=>{
    const q=VENC.filter(z=>z===n).length;
    h+=`<div class="fx"><i style="background:${corVenc(n)};border-color:${corVenc(n)}"></i>${NOME(n)} — venceu em ${q} urna${q===1?'':'s'}</div>`;});
+  if(SOVENC()){const qo=VENC.filter(z=>z&&z!==cand).length;h+=`<div class="fx"><i style="background:${css('--nada')}"></i>locais em que ele não venceu (omitidos) <span style="margin-left:auto;color:var(--tinta2);font-family:'IBM Plex Mono',monospace">${qo}</span></div>`;}
   if(modo!=='venc'){h+=`<div style="margin-top:6px;color:var(--tinta2)">As cores acima são das urnas. As edificações seguem: ${TIT[modo]}.</div>`;
    const f=PCT[modo]?pc:((modo==='comp'||modo==='mor')?(x=>x.toFixed(2).replace('.',',')):(x=>nf.format(Math.round(x))));
    for(let i=0;i<=BRK.length;i++){const a=i?BRK[i-1]:0,b=BRK[i];
@@ -1706,7 +1714,7 @@ function fichaL(i){selL=i;selB=-1;const l=D.loc[i];const R=resumo(idsLocal(i));p
 /* ---- tabelas ---- */
 let ordem={};
 function recorte(){
- const ativo=fdist>=0||fbai>=0||frua>=0;
+ const ativo=fdist>=0||fbai>=0||frua>=0||!!FLOC;
  if(!ativo)return null;
  const b=new Set(),r=new Set(),l=new Set(),serve=new Set();
  for(let k=0;k<NB;k++)if(VISIVEL(k)){b.add(D.bb[k]);r.add(D.br[k]);serve.add(D.bl[k]);}
@@ -1714,6 +1722,7 @@ function recorte(){
  if(frua<0)D.loc.forEach((u,i)=>{
   if(fbai>=0?u.ub===fbai:u.ud===fdist)l.add(i);});
  if(!l.size)serve.forEach(i=>l.add(i));
+ if(FLOC){l.clear();FLOC.forEach(i=>l.add(i));}
  return {b,r,l};}
 const TAB={
  bairros:()=>({cols:[['Bairro / localidade','n',0],['Domicílios','n',1],['População','n',2],['Eleitores est.','n',3],['Endereços','n',4]],
@@ -2192,6 +2201,13 @@ $('candi').onchange=e=>{cand=e.target.value;
  if(cand&&modo!=='cand'){modo='cand';$('modo').value='cand';}
  if(!cand&&modo==='cand'){modo='dom';$('modo').value='dom';}
  aplica();};
+function setFLOC(ids,semAplicar){
+ FLOC=ids&&ids.length?new Set(ids):null;
+ const c=$('lfloc');
+ if(c){if(FLOC){c.style.display='flex';c.innerHTML='<span>Só '+(FLOC.size===1?'o local de votação escolhido':FLOC.size+' locais de votação')+' no mapa</span> <button class="bt" type="button" id="lflocX">Mostrar tudo</button>';
+   $('lflocX').onclick=()=>{setFLOC(null);};}
+  else{c.style.display='none';c.innerHTML='';}}
+ if(!semAplicar)aplica();}
 function aplica(){
  if($('gav')&&$('gav').dataset.on==='1')setTimeout(tabela,0);classes();legenda();desenha();
  $('blEleicao').style.opacity=(modo==='venc'||modo==='cand')?1:.55;
@@ -2382,12 +2398,12 @@ $('btnMarcas').onclick=()=>{
     <button class="bt larg" onclick="if(confirm('Apagar todas as marcações deste aparelho?')){MARC={pins:[],pint:{}};salvaM();desenha();$('ajuda').dataset.on='0';}">Apagar todas</button></div>`;
  $('ajuda').dataset.on='1';if(movel())abreRail(false);};
 $('btnLimpar').onclick=()=>{
- fbai=-1;frua=-1;fdist=-1;cand='';
+ setFLOC(null,true);fbai=-1;frua=-1;fdist=-1;cand='';
  $('fdist').value=-1;montaBairros();$('fbai').value=-1;$('frua').value='';$('fsec').value='';
  $('candi').value='';$('lrua').style.display='none';
  if(modo==='cand'){modo='dom';$('modo').value='dom';}
  selB=-1;selL=-1;selR=-1;selP=-1;popFecha();aplica();};
-$('btnTudo').onclick=()=>{fbai=-1;frua=-1;fdist=-1;$('fdist').value=-1;montaBairros();
+$('btnTudo').onclick=()=>{setFLOC(null,true);fbai=-1;frua=-1;fdist=-1;$('fdist').value=-1;montaBairros();
  $('frua').value='';aplica();enquadra(0,0,100000,60000);popFecha();if(movel())abreRail(false);};
 $('btnGps').onclick=()=>{
  if(seguindo){paraGps();return;}
@@ -2672,7 +2688,7 @@ Object.assign(NMET,{el:{rot:'Eleitores (cadastro)',un:'n',grupo:'Território'},p
  br:{rot:'Votos em branco (% dos votos)',un:'%',grupo:'Resultado'},nu:{rot:'Votos nulos (% dos votos)',un:'%',grupo:'Resultado'},
  abst:{rot:'Abstenção',un:'%',grupo:'Resultado'},comp:{rot:'Comparecimento',un:'%',grupo:'Resultado'},
  marg:{rot:'Margem do líder sobre o 2º (pontos %)',un:'x',grupo:'Resultado'},lidp:{rot:'Votação do líder (% dos válidos)',un:'%',grupo:'Resultado'}});
-const fmtU=(un,v)=>v==null||!isFinite(v)?'—':(un==='%'?pf(v):(un==='x'?f2(v):n0(v)));
+const fmtU=(un,v)=>v==null||!isFinite(v)?'—':(un==='%'?pf(v):(un==='x'?f2(v):(un==='pp'?(v>0?'+':'')+f1(v)+' p.p.':(un==='v'?(v>0?'+':'')+n0(v):n0(v)))));
 
 /* ---------- territórios (calculados uma vez por tipo) ---------- */
 const WL=[];                       // eleitores por local, somando todas as edificações
@@ -3135,6 +3151,9 @@ function catalogoGraf(P,G){
  const grupos_=[];
  grupos_.push(['Resultado — '+P,[...G.ordem.slice(0,12).map(g=>['g:'+g,'% '+rotCurto(G,g)+(G.info[g].sig&&G.modo==='cand'?' ('+G.info[g].sig+')':''),G.info[g].cor]),
   ['br','% brancos',null],['nu','% nulos',null],...(ANOPLE(P)!=='2022'?[['abst','% abstenção',null],['comp','% comparecimento',null]]:[]),['marg','Margem do líder (p.p.)',null]]]);
+ {const A=S.gr.dA&&G.info[S.gr.dA]?S.gr.dA:G.ordem[0],B=S.gr.dB&&G.info[S.gr.dB]&&S.gr.dB!==A?S.gr.dB:(G.ordem.find(x=>x!==A)||A);
+  S.gr.dA=A;S.gr.dB=B;
+  grupos_.push(['Diferença entre dois '+(G.modo==='cand'?'candidatos':'partidos'),[['dv:'+A+'|'+B,'Diferença em votos',null],['dp:'+A+'|'+B,'Diferença em pontos percentuais (p.p.)',null]],'dif']);}
  grupos_.push(['Censo 2022',CENSO.map(c=>[c[0],c[1],null])]);
  grupos_.push(['Perfil do eleitorado (2026)',PERFIL.map(p=>[p[0],p[1],null])]);
  grupos_.push(['Tamanho',[['el','Eleitores',null],['pop','População',null],['dom','Domicílios',null]]]);
@@ -3145,12 +3164,27 @@ function catalogoGraf(P,G){
  grupos_.push(['O mesmo partido em outros pleitos',gp,part]);
  return grupos_;}
 function metaMetrica(id,P,G){
+ if(id.startsWith('dv:')||id.startsWith('dp:')){const [a,b]=id.slice(3).split('|');
+  const pn=x=>rotCurto(G,x).split(' ')[0];return {rot:(id[1]==='v'?'Dif. em votos: ':'Dif. em p.p.: ')+pn(a)+' − '+pn(b),un:id[1]==='v'?'v':'pp',cor:null};}
  if(id.startsWith('g:')){const g=id.slice(2);return {rot:rotCurto(G,g),un:'%',cor:G.info[g]?G.info[g].cor:null};}
  if(id.startsWith('pp:')){const [k,sg]=id.slice(3).split('|');const GG=grupos(k,'part');return {rot:sg+' · '+k.replace(' · ',' '),un:'%',cor:GG.info[sg]?GG.info[sg].cor:null};}
  const n=NMET[id]||{rot:id,un:'%'};return {rot:n.rot.replace(/ \(.*$/,'').replace(/^Eleitores com /,'Eleit. c/ '),un:n.un,cor:null};}
 function valorGraf(id,r,tipo){
+ if(id.startsWith('dv:')||id.startsWith('dp:')){const [a,b]=id.slice(3).split('|');
+  const d=(r.v[a]||0)-(r.v[b]||0);
+  if(id[1]==='v')return r.val>0||d?d:null;
+  return r.val>0?100*d/r.val:null;}
  if(id.startsWith('pp:')){const [k,sg]=id.slice(3).split('|');const rr=linhas(k,tipo,'part');const x=rr[r.t.id];return x?valorPP(x,sg):null;}
  return valor(r,id);}
+function linhaTotal(P,agr){
+ const G=grupos(P,agr),VS=fonteVotos(P,'loc'),AP=fonteApt(P,'loc');
+ const v={};let val=0,br=0,nu=0,apt=0,temApt=false,pop=0,dom=0;
+ VS.forEach((o,l)=>{if(!o)return;for(const n in o){const q=o[n];if(n==='95')br+=q;else if(n==='96')nu+=q;else{val+=q;const g=G.keyOf[n];if(g!=null)v[g]=(v[g]||0)+q;}}});
+ if(AP)AP.forEach(a=>{if(a!=null){apt+=a;temApt=true;}});
+ const el=D.loc.reduce((a,l)=>a+(l.a||0),0);
+ const ord=Object.keys(v).sort((a,b)=>v[b]-v[a]);
+ return {t:{id:-1,nome:'Acopiara (total)',sub:'',el,pop:0,dom:0,ci:{}},v,val,br,nu,tot:val+br+nu,apt:temApt?apt:null,pf:null,ord,
+  lid:ord[0]!=null?ord[0]:null,lidp:val>0&&ord[0]!=null?100*v[ord[0]]/val:null,seg:ord[1]!=null?ord[1]:null,segp:val>0&&ord[1]!=null?100*v[ord[1]]/val:null};}
 function dadosGraf(){
  const P=S.ple,G=grupos(P,S.agr),g=S.gr;
  let tipo=g.ter;if(g.cats==='dist')tipo='dist';
@@ -3164,6 +3198,7 @@ function dadosGraf(){
  if(g.ord==='nome')mat.sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
  else if(g.ord==='m1'&&ids.length)mat.sort((a,b)=>(b.vals[0]==null?-1e9:b.vals[0])-(a.vals[0]==null?-1e9:a.vals[0]));
  else mat.sort((a,b)=>b.r.t.el-a.r.t.el);
+ if(g.total==='1'){const rt=linhaTotal(P,S.agr);mat.unshift({r:rt,nome:rt.t.nome,vals:ids.map(id=>valorGraf(id,rt,tipo)),total:true});}
  return {metas,mat,tipo};}
 function coresSerie(metas){
  const usadas=new Set(),out=[];let pi=0;
@@ -3176,7 +3211,8 @@ function graficoSVG(dg,titulo){
  if(!metas.length||!mat.length)return '<div class="dica" style="padding:30px;text-align:center">Marque de 1 a 5 informações ao lado para montar o gráfico.</div>';
  const tin=C_('--tinta2'),grd=C_('--regua2'),axc=C_('--regua'),txt=C_('--tinta');
  const todosPct=metas.every(m=>m.un==='%');
- const norm=g.escala==='norm'||(g.escala==='auto'&&!todosPct);
+ const mesmaUn=metas.every(m=>m.un===metas[0].un);
+ const norm=g.escala==='norm'||(g.escala==='auto'&&!mesmaUn);
  const maxs=metas.map((m,j)=>Math.max(1e-9,...mat.map(x=>x.vals[j]==null?0:x.vals[j])));
  const val=(j,v)=>v==null?null:(norm?100*v/maxs[j]:v);
  let tipo=g.tipo;
@@ -3196,17 +3232,19 @@ function graficoSVG(dg,titulo){
   const emp=tipo==='emp';
   let ymax=emp?Math.max(1e-9,...mat.map(x=>x.vals.reduce((a,v,j)=>a+(val(j,v)||0),0))):Math.max(1e-9,...mat.flatMap(x=>x.vals.map((v,j)=>val(j,v)||0)));
   ymax=nice_(ymax*1.05);if(!emp&&(norm||todosPct))ymax=100;
-  const Y=v=>top+300-(v/ymax)*300;
+  let ymin=0;if(!emp){const mn=Math.min(0,...mat.flatMap(x=>x.vals.map((v,j)=>val(j,v)||0)));if(mn<0)ymin=-nice_(-mn*1.05);}
+  if(ymin<0&&ymax<-ymin*.12)ymax=nice_(-ymin*.12);
+  const Y=v=>top+300-((v-ymin)/(ymax-ymin))*300;
   s+=`<svg viewBox="0 0 ${W} ${Ht}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:IBM Plex Sans,sans-serif">${titulo?cabec:''}${legSvg}`;
-  const st=nice_(ymax/5);
-  for(let v=0;v<=ymax+1e-9;v+=st)s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${grd}"/><text x="${m.l-6}" y="${Y(v)+3.5}" font-size="10.5" text-anchor="end" fill="${tin}">${(Math.round(v*10)/10).toString().replace('.',',')}${norm&&!emp?'':(todosPct?'%':'')}</text>`;
+  const st=nice_((ymax-ymin)/5);
+  for(let v=Math.ceil(ymin/st-1e-9)*st,ct=0;v<=ymax+1e-9&&ct<40;v+=st,ct++)s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${grd}"/><text x="${m.l-6}" y="${Y(v)+3.5}" font-size="10.5" text-anchor="end" fill="${tin}">${(Math.round(v*10)/10).toString().replace('.',',')}${norm&&!emp?'':(todosPct?'%':'')}</text>`;
   const bw=(W-m.l-m.r)/mat.length;
   mat.forEach((x,i)=>{
    const cx_=m.l+bw*(i+.5);
    if(tipo==='col'){const gw=Math.min(bw*.8,metas.length*38),w=gw/metas.length;
     metas.forEach((mt,j)=>{const v=val(j,x.vals[j]);if(v==null)return;
-     s+=`<rect x="${(cx_-gw/2+j*w).toFixed(1)}" y="${Y(v).toFixed(1)}" width="${Math.max(2,w-2).toFixed(1)}" height="${Math.max(0,top+300-Y(v)).toFixed(1)}" rx="2" fill="${cores[j]}"><title>${hx(x.nome)} — ${hx(mt.rot)}: ${fmtU(mt.un,x.vals[j])}</title></rect>`;
-     if(bw>46&&mat.length<=9&&metas.length<=3)s+=`<text x="${(cx_-gw/2+j*w+w/2-1).toFixed(1)}" y="${(Y(v)-3).toFixed(1)}" font-size="9.5" text-anchor="middle" fill="${tin}">${fmtU(mt.un,x.vals[j]).replace('%','')}</text>`;});}
+     s+=`<rect x="${(cx_-gw/2+j*w).toFixed(1)}" y="${Math.min(Y(v),Y(0)).toFixed(1)}" width="${Math.max(2,w-2).toFixed(1)}" height="${Math.abs(Y(0)-Y(v)).toFixed(1)}" rx="2" fill="${cores[j]}"><title>${hx(x.nome)} — ${hx(mt.rot)}: ${fmtU(mt.un,x.vals[j])}</title></rect>`;
+     if(bw>46&&mat.length<=9&&metas.length<=3)s+=`<text x="${(cx_-gw/2+j*w+w/2-1).toFixed(1)}" y="${(v<0?Y(v)+11:Y(v)-3).toFixed(1)}" font-size="9.5" text-anchor="middle" fill="${tin}">${fmtU(mt.un,x.vals[j]).replace('%','').replace(' p.p.','')}</text>`;});}
    else if(tipo==='emp'){let acc=0;const gw=Math.min(bw*.7,60);
     metas.forEach((mt,j)=>{const v=val(j,x.vals[j]);if(v==null||v<=0)return;
      s+=`<rect x="${(cx_-gw/2).toFixed(1)}" y="${Y(acc+v).toFixed(1)}" width="${gw.toFixed(1)}" height="${Math.max(0,Y(acc)-Y(acc+v)).toFixed(1)}" fill="${cores[j]}"><title>${hx(x.nome)} — ${hx(mt.rot)}: ${fmtU(mt.un,x.vals[j])}</title></rect>`;acc+=v;});}
@@ -3219,16 +3257,18 @@ function graficoSVG(dg,titulo){
  }else if(tipo==='bar'){
   const m={l:150,r:50},rh=Math.max(18,metas.length*13+8),Ht=top+mat.length*rh+30;
   let xmax=nice_(Math.max(1e-9,...mat.flatMap(x=>x.vals.map((v,j)=>val(j,v)||0)))*1.05);if(norm)xmax=100;
-  const X=v=>m.l+v/xmax*(W-m.l-m.r);
+  let xmin=0;{const mn=Math.min(0,...mat.flatMap(x=>x.vals.map((v,j)=>val(j,v)||0)));if(mn<0)xmin=-nice_(-mn*1.05);}
+  if(xmin<0&&xmax<-xmin*.12)xmax=nice_(-xmin*.12);
+  const X=v=>m.l+(v-xmin)/(xmax-xmin)*(W-m.l-m.r);
   s+=`<svg viewBox="0 0 ${W} ${Ht}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:IBM Plex Sans,sans-serif">${titulo?cabec:''}${legSvg}`;
-  const st=nice_(xmax/5);
-  for(let v=0;v<=xmax+1e-9;v+=st)s+=`<line y1="${top}" y2="${Ht-24}" x1="${X(v)}" x2="${X(v)}" stroke="${grd}"/><text y="${Ht-10}" x="${X(v)}" font-size="10.5" text-anchor="middle" fill="${tin}">${(Math.round(v*10)/10).toString().replace('.',',')}${todosPct&&!norm?'%':''}</text>`;
+  const st=nice_((xmax-xmin)/5);
+  for(let v=Math.ceil(xmin/st-1e-9)*st,ct=0;v<=xmax+1e-9&&ct<40;v+=st,ct++)s+=`<line y1="${top}" y2="${Ht-24}" x1="${X(v)}" x2="${X(v)}" stroke="${grd}"/><text y="${Ht-10}" x="${X(v)}" font-size="10.5" text-anchor="middle" fill="${tin}">${(Math.round(v*10)/10).toString().replace('.',',')}${todosPct&&!norm?'%':''}</text>`;
   mat.forEach((x,i)=>{const y=top+i*rh;
    s+=`<text x="${m.l-8}" y="${y+rh/2+3}" font-size="11" text-anchor="end" fill="${txt}">${hx(cortar(x.nome,24))}</text>`;
    const bh=(rh-6)/metas.length;
    metas.forEach((mt,j)=>{const v=val(j,x.vals[j]);if(v==null)return;
-    s+=`<rect x="${m.l}" y="${(y+3+j*bh).toFixed(1)}" width="${Math.max(2,X(v)-m.l).toFixed(1)}" height="${Math.max(2,bh-1.5).toFixed(1)}" rx="2" fill="${cores[j]}"><title>${hx(x.nome)} — ${hx(mt.rot)}: ${fmtU(mt.un,x.vals[j])}</title></rect>`;
-    if(metas.length<=2)s+=`<text x="${(X(v)+4).toFixed(1)}" y="${(y+3+j*bh+bh/2+3).toFixed(1)}" font-size="9.5" fill="${tin}">${fmtU(mt.un,x.vals[j])}</text>`;});});
+    s+=`<rect x="${Math.min(X(0),X(v)).toFixed(1)}" y="${(y+3+j*bh).toFixed(1)}" width="${Math.max(2,Math.abs(X(v)-X(0))).toFixed(1)}" height="${Math.max(2,bh-1.5).toFixed(1)}" rx="2" fill="${cores[j]}"><title>${hx(x.nome)} — ${hx(mt.rot)}: ${fmtU(mt.un,x.vals[j])}</title></rect>`;
+    if(metas.length<=2)s+=`<text x="${(v<0?X(v)-4:X(v)+4).toFixed(1)}" text-anchor="${v<0?'end':'start'}" y="${(y+3+j*bh+bh/2+3).toFixed(1)}" font-size="9.5" fill="${tin}">${fmtU(mt.un,x.vals[j])}</text>`;});});
   s+='</svg>';
  }else{ /* dispersão: x = 1ª informação, y = 2ª, tamanho = eleitores */
   const Ht=top+380,m={l:56,r:18,b:46};
@@ -3256,9 +3296,10 @@ function abaGraf(){
  g.sel=g.sel.filter(id=>todos.has(id));
  if(!g.sel.length){g.sel=G.ordem.slice(0,2).map(x=>'g:'+x);}
  const partOpts=grupos(P,'part').ordem.slice(0,25).map(x=>[x,x]);
+ const difOpts=G.ordem.slice(0,30).map(x=>[x,rotG(G,x)]);
  if(!g.partido||!partOpts.find(o=>o[0]===g.partido))g.partido=(partOpts[0]||['',''])[0];
  const lista=cat.map(([tit,itens,extra])=>`<fieldset><legend>${hx(tit)}</legend>
-  ${extra!==undefined?`<select data-g="partido" style="margin-bottom:6px">${opts(partOpts,g.partido)}</select>`:''}
+  ${extra==='dif'?`<label style="display:block;font-size:10.6px;color:var(--tinta2);margin-bottom:6px">Primeiro<select data-g="dA">${opts(difOpts,g.dA)}</select></label><label style="display:block;font-size:10.6px;color:var(--tinta2);margin-bottom:6px">Menos o segundo<select data-g="dB">${opts(difOpts,g.dB)}</select></label>`:(extra!==undefined?`<select data-g="partido" style="margin-bottom:6px">${opts(partOpts,g.partido)}</select>`:'')}
   <div class="ckl">${itens.map(([id,rot,cor])=>`<label title="${hx(rot)}"><input type="checkbox" data-gm="${hx(id)}" ${g.sel.includes(id)?'checked':''}>${cor?sw(cor):''}<span>${hx(rot)}</span></label>`).join('')}</div></fieldset>`).join('');
  const tipos=[['col','Colunas'],['bar','Barras horizontais'],['lin','Linhas'],['emp','Empilhadas'],['dis','Dispersão (1ª × 2ª informação)']];
  const catOpts=[['top','Maiores áreas por eleitores'],['man','Escolher áreas'],['dist','Todos os distritos']];
@@ -3271,6 +3312,7 @@ function abaGraf(){
     <label>Áreas<select data-g="cats">${opts(catOpts,g.cats)}</select></label>
     ${g.cats==='top'?`<label>Quantas<select data-g="n">${opts([[5,'5'],[8,'8'],[10,'10'],[15,'15'],[20,'20']],g.n)}</select></label>`:''}
     ${manLista}
+    <label>Incluir linha com o total de Acopiara<select data-g="total">${opts([['0','Não'],['1','Sim']],g.total||'0')}</select></label>
     <label>Ordenar por<select data-g="ord">${opts([['el','Número de eleitores'],['m1','1ª informação'],['nome','Nome']],g.ord)}</select></label>
     <label>Tipo de gráfico<select data-g="tipo">${opts(tipos,g.tipo)}</select></label>
     <label>Escala<select data-g="escala">${opts([['auto','Automática'],['real','Valores reais'],['norm','Normalizar (0 a 100 pelo maior valor)']],g.escala)}</select></label>
@@ -3289,10 +3331,11 @@ function tabelaGraf(){
  const {metas,mat}=dg;
  return `<table><thead><tr><th>Área</th>${metas.map(m=>`<th class="n">${hx(m.rot)}</th>`).join('')}</tr></thead><tbody>${mat.map(x=>`<tr><td>${hx(x.nome)}</td>${x.vals.map((v,j)=>`<td class="n">${fmtU(metas[j].un,v)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;}
 function notaGraf(){
- const g=S.gr,dg=dadosGraf(),todosPct=dg.metas.every(m=>m.un==='%');
+ const g=S.gr,dg=dadosGraf(),todosPct=dg.metas.every(m=>m.un===dg.metas[0].un);
  let t='';
  if(g.escala==='auto'&&!todosPct)t='As informações têm unidades diferentes (percentuais e contagens), por isso cada uma foi normalizada pelo seu maior valor entre as áreas. Passe o mouse ou toque nas barras para ver o valor real.';
  else if(g.escala==='norm')t='Cada informação foi dividida pelo seu maior valor entre as áreas mostradas (maior = 100).';
+ if(g.sel.some(i=>i.startsWith('dv:')||i.startsWith('dp:')))t+=(t?' ':'')+'Diferença = primeiro menos segundo: valor positivo indica vantagem do primeiro; negativo, do segundo. Marque "Incluir linha com o total de Acopiara" para ver a diferença geral.';
  if(g.tipo==='dis')t+=(t?' ':'')+'A dispersão usa só as duas primeiras informações marcadas; o tamanho do ponto é o número de eleitores.';
  if(g.tipo==='emp')t+=(t?' ':'')+'Empilhadas somam as informações; faz mais sentido com candidatos ou partidos do mesmo pleito.';
  if(!EXATO[g.ter]&&g.cats!=='dist'||g.cats==='dist')t+=(t?' ':'')+'Resultados por bairro, rua, distrito ou quadra são estimativas por rateio.';
@@ -3376,14 +3419,14 @@ function desenhaCand(){
  let corpo='';
  if(FD.tipo==='local'||FD.tipo==='secao'){
   let rows=FD.tipo==='local'
-   ?L.map(x=>({nome:bonito(x.L.n),sub:bonito(x.L.b||''),v:x.v,val:x.val,id:x.id,loc:x.id,ns:Sx.filter(z=>z.z.l===x.id).length}))
+   ?L.map(x=>{const ss=Sx.filter(z=>z.z.l===x.id).sort((a,b)=>a.z.s-b.z.s);return {nome:bonito(x.L.n),sub:bonito(x.L.b||''),v:x.v,val:x.val,id:x.id,loc:x.id,ns:ss.length,secs:ss.map(z=>[z.z.s,z.v])};})
    :Sx.map(x=>{const l=D.loc[x.z.l]||{};return {nome:'Seção '+x.z.s,sub:bonito(l.n||''),v:x.v,val:x.val,id:x.id,loc:x.z.l};});
   const k=FD.ord,d=FD.dir;
   rows.forEach(r=>{r.p=r.val>0?100*r.v/r.val:-1;r.sh=100*r.v/soma;});
   rows.sort((a,b)=>k==='nome'?d*-1*a.nome.localeCompare(b.nome,'pt'):d*(a[k]-b[k])||b.v-a.v);
   const th=(k_,r,cl)=>`<th class="${cl||''}" data-co="${k_}" style="cursor:pointer">${r}${FD.ord===k_?(FD.dir<0?' ↓':' ↑'):''}</th>`;
   corpo=`<div class="tbw" style="max-height:48vh"><table><thead><tr>${th('nome','Local')}${th('v','Votos','n')}${th('p','% do local','n')}${th('sh','% dos votos dele','n')}<th style="min-width:90px"></th><th></th></tr></thead><tbody>
-  ${rows.map(r=>`<tr><td>${hx(r.nome)}${r.sub?`<div class="sub">${hx(r.sub)}${r.ns?` · ${r.ns} seç${r.ns>1?'ões':'ão'}`:''}</div>`:''}</td><td class="n">${n0(r.v)}</td><td class="n">${r.p>=0?f1(r.p)+'%':'—'}</td><td class="n">${f1(r.sh)}%</td><td>${barra(100*r.v/max,cor)}</td><td>${r.loc>=0?`<button class="bt" data-cmapa="${r.loc}" title="Mostrar no mapa">Mapa</button>`:''}</td></tr>`).join('')}</tbody></table></div>
+  ${rows.map(r=>`<tr><td>${hx(r.nome)}${r.sub?`<div class="sub">${hx(r.sub)}${r.ns?` · ${r.ns} seç${r.ns>1?'ões':'ão'}`:''}</div>`:''}${r.secs&&r.secs.length?`<div class="sub secs">${r.secs.map(([n_,v_])=>`<span title="Seção ${n_}: ${n0(v_)} votos"><b>Seç. ${n_}</b> ${n0(v_)}</span>`).join('')}</div>`:''}</td><td class="n">${n0(r.v)}</td><td class="n">${r.p>=0?f1(r.p)+'%':'—'}</td><td class="n">${f1(r.sh)}%</td><td>${barra(100*r.v/max,cor)}</td><td>${r.loc>=0?`<button class="bt" data-cmapa="${r.loc}" title="Mostrar no mapa">Mapa</button>`:''}</td></tr>`).join('')}</tbody></table></div>
   <div class="dica">${FD.tipo==='local'?'Votos apurados em cada local de votação (dado oficial do TSE, por seção).':'Votos apurados em cada seção eleitoral (dado oficial do TSE).'} "% do local" é a fatia dos votos válidos do local que foram para ele.</div>`;
  }else{
   const T=FD.tipo;let rows=votosPorTerr(P,T,n).filter(r=>r.v>0.5||r.val>0);
@@ -3407,21 +3450,31 @@ function verCandNoMapa(n,foco){
   if(typeof pleito!=='undefined'&&pleito!==P){pleito=P;if($('pleito'))$('pleito').value=P;candOpts();recalcEle();}
   cand=n;if($('candi'))$('candi').value=n;
   modo='cand';if($('modo'))$('modo').value='cand';
+  /* limpa recortes de território e mostra só o(s) local(is) escolhido(s) */
+  fbai=-1;frua=-1;fdist=-1;try{$('fdist').value=-1;montaBairros();$('fbai').value=-1;$('frua').value='';}catch(e){}
+  if(foco&&foco.t&&foco.t!=='l'){
+   setFLOC(null,true);aplica();
+   if(foco.t==='bairro')irBairro(foco.id);else if(foco.t==='dist')irDistrito(foco.id);else if(foco.t==='rua')irRua(foco.id);
+   return;}
+  divi='ed';if($('divisao'))$('divisao').value='ed';try{cEdi.checked=true;}catch(e){}
   try{const cu=document.getElementById('cUrn');if(cu&&!cu.checked)cu.checked=true;}catch(e){}
-  aplica();
-  if(foco!=null)setTimeout(()=>{try{if(foco.t==='l')irUrna(foco.id);else if(foco.t==='bairro')irBairro(foco.id);else if(foco.t==='dist')irDistrito(foco.id);else if(foco.t==='rua')irRua(foco.id);}catch(e){console.error(e);}},200);
-  else{const ids=[];const Sx=D.elei[P].sec;
-   for(const z of D.sec){const o=Sx[String(z.s)];if(o&&o[n]>0&&z.l>=0&&ids.indexOf(z.l)<0)ids.push(z.l);}
-   try{if(ids.length){let a=1e9,b=1e9,c=-1e9,d=-1e9;for(const l of ids){const q=D.loc[l];a=Math.min(a,q.x);b=Math.min(b,q.y);c=Math.max(c,q.x);d=Math.max(d,q.y);}
-    enquadra(a-300,b-300,Math.max(c-a+600,600),Math.max(d-b+600,600));}
-    if(typeof movel==='function'&&movel())abreRail(false);}catch(e){console.error(e);}}
+  let ids;
+  if(foco&&foco.t==='l')ids=[foco.id];
+  else{ids=[];const Sx=D.elei[P].sec;
+   for(const z of D.sec){const o=Sx[String(z.s)];if(o&&o[n]>0&&z.l>=0&&ids.indexOf(z.l)<0)ids.push(z.l);}}
+  selB=-1;selR=-1;selP=-1;popFecha();
+  setFLOC(ids);
+  if(ids.length===1){irUrna(ids[0]);}
+  else if(ids.length){let a=1e9,b=1e9,c=-1e9,d=-1e9;for(const l of ids){const q=D.loc[l];a=Math.min(a,q.x);b=Math.min(b,q.y);c=Math.max(c,q.x);d=Math.max(d,q.y);}
+   enquadra(a-300,b-300,Math.max(c-a+600,600),Math.max(d-b+600,600));}
+  if(typeof movel==='function'&&movel())abreRail(false);
  }catch(e){console.error(e);}},120);}
 function csvCandLocais(){
  const P=S.ple,n=FD.n,c=candDe(P,n),L=votosPorLocal(P,n),Sx=votosPorSecao(P,n);
  const rows=FD.tipo==='secao'
   ?[['Seção','Local de votação','Votos','% dos válidos da seção'],...Sx.map(x=>['Seção '+x.z.s,bonito((D.loc[x.z.l]||{}).n||''),x.v,x.val>0?f1(100*x.v/x.val):''])]
   :FD.tipo==='local'
-  ?[['Local de votação','Bairro/localidade','Votos','% dos válidos do local'],...L.map(x=>[bonito(x.L.n),bonito(x.L.b||''),x.v,x.val>0?f1(100*x.v/x.val):''])]
+  ?[['Local de votação','Bairro/localidade','Votos','% dos válidos do local','Seções (votos)'],...L.map(x=>[bonito(x.L.n),bonito(x.L.b||''),x.v,x.val>0?f1(100*x.v/x.val):'',Sx.filter(z=>z.z.l===x.id).sort((a,b)=>a.z.s-b.z.s).map(z=>z.z.s+' ('+z.v+')').join('; ')])]
   :[[FD.tipo==='bairro'?'Bairro':FD.tipo==='dist'?'Distrito':'Rua','Subdivisão','Votos (estimados)','% dos válidos'],...votosPorTerr(P,FD.tipo,n).map(r=>[r.t.nome,r.t.sub,Math.round(r.v),r.val>0?f1(100*r.v/r.val):''])];
  baixa(`acopiara_votos_${c.u.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'_')}_${ANOPLE(P)}_${FD.tipo}.csv`,'﻿'+csv(rows));}
 
@@ -3525,7 +3578,11 @@ raiz.addEventListener('change',e=>{
  if(t.dataset.c!==undefined){const k=t.dataset.c;S.cx[k]=t.type==='checkbox'?(t.checked?1:0):(k==='min'?+t.value:t.value);
   $('elCruz').innerHTML=corpoCruz();return;}
  if(t.dataset.g!==undefined){const k=t.dataset.g;let v=t.value;if(k==='n')v=+v;
-  S.gr[k]=v;if(k==='ter'||k==='cats'){S.gr.man=[];}if(k==='partido'||k==='ter'||k==='cats')render();else if(k!=='busca')atualizaGraf();return;}
+  S.gr[k]=v;
+  if(k==='dA'||k==='dB'){if(S.gr.dA===S.gr.dB){const G_=grupos(S.ple,S.agr);const o=G_.ordem.find(x=>x!==v);if(k==='dA')S.gr.dB=o;else S.gr.dA=o;}
+   const nid=['dv','dp'].map(p=>p+':'+S.gr.dA+'|'+S.gr.dB);
+   S.gr.sel=[...new Set(S.gr.sel.map(id=>id.startsWith('dv:')?nid[0]:id.startsWith('dp:')?nid[1]:id))];render();return;}
+  if(k==='ter'||k==='cats'){S.gr.man=[];}if(k==='partido'||k==='ter'||k==='cats')render();else if(k!=='busca')atualizaGraf();return;}
  if(t.dataset.gm!==undefined){const id=t.dataset.gm,s=S.gr.sel;
   if(t.checked){if(s.length>=MAXGR){t.checked=false;return;}s.push(id);}else{const i=s.indexOf(id);if(i>=0)s.splice(i,1);}
   atualizaGraf();return;}
