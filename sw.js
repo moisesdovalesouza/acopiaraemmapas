@@ -2,7 +2,7 @@
    Páginas: rede primeiro, cópia só sem internet.
    Em segundo plano: guarda todas as páginas do aplicativo para uso offline.
    Fundos de mapa: guarda os ladrilhos já vistos, até um limite. */
-const VERSAO = 'acopiara-v13';
+const VERSAO = 'acopiara-v14';
 const LADRILHOS = 'acopiara-ladrilhos';
 const LIMITE_LADRILHOS = 3000;
 const HOSTS_MAPA = ['server.arcgisonline.com', 'tile.openstreetmap.org', 'basemaps.cartocdn.com'];
